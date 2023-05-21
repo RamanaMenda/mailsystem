@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account</title>
+</head>
+<body>
+<style>
+        .center{
+            margin: auto;
+            width: 60%;
+            border: 3px solid #737373;
+            background-color: rgb(40,150,210);
+            text-align: center;
+            padding: 10% 20% 15% 19%;
+            font-size:xx-large;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .center1{
+            text-align: center;
+            font-size: x-large;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+</style>
+    <div class="center">
+    <h1>Create New Savings Account</h1>
+        <form action="create" method="post" autocomplete="off">
+            {% csrf_token %}
+
+            Post Box Number: <input type = 'int' name= 'pbno' class="center1"><br>
+            Account Number: <input type = 'int' name = 'anumber' class="center1"><br>
+            Name: <input type = 'text' name = 'name' class="center1"><br>
+            Address: <input type = 'text' name = 'address' class="center1"><br>
+            IFSC: <input type = 'text' name = 'ifsc' class="center1"><br>
+            Pan Card: <input type = 'text' name = 'pancard' class="center1"><br>
+            Aadhar: <input type = 'int' name = 'aadhar' class="center1"><br>
+            Ration Card: <input type = 'text' name = 'rcard' class="center1" placeholder="Null accepted"><br>
+            Date of Birth: <input type = 'date' name = 'dob' class="center1"><br>
+            Phone Number: <input type = 'tel' name = 'phno' class="center1"><br>
+            State: <input type = 'text' name = 'state' class="center1"><br>
+            City: <input type = 'text' name = 'city' class="center1"><br>
+            Pincode: <input type = 'int' name = 'pincode' class="center1"><br>
+            Nominees Account Number: <input type = 'int' name = 'nanumber' class="center1"><br>
+            <br><input type = 'submit' class="center1">
+        </form>
+        <div>
+        {% for message in messages %}
+            <h3>
+                {{message}}
+            </h3>
+        {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

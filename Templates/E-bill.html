@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Bill</title>
+</head>
+<body>
+<style>
+        .center{
+            margin: auto;
+            width: 60%;
+            border: 3px solid #737373;
+            background-color: rgb(40,150,210);
+            text-align: center;
+            padding: 10% 20% 15% 19%;
+            font-size:xx-large;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .center1{
+            text-align: center;
+            font-size: x-large;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+</style>
+    <div class="center">
+    <h1>E-Bill Payment</h1>
+        <form action="e_bill" method="post" autocomplete="off">
+            {% csrf_token %}
+
+            Account Number: <input type = 'int' name = 'anumber' class="center1"><br>
+            Biller Name: <input type = 'text' name = 'name' class="center1"><br>
+            Biller Id: <input type = 'int' name = 'id' class="center1"><br>
+            Biller Address: <input type = 'text' name = 'address' class="center1"><br>
+            Last Used Units: <input type = 'int' name = 'lunits' class="center1"><br>
+            Current Units: <input type = 'int' name = 'cunits' class="center1"><br>
+            Amount: <input type = 'int' name = 'amt' class="center1"><br>
+            Date: <input type = 'date' name = 'date' class="center1"><br>
+            Receipt Number: <input type = 'text' name = 'recepitNo' class="center1"><br>
+            <br><input type = 'submit' class="center1">
+        </form>
+        <div>
+        {% for message in messages %}
+            <h3>
+                {{message}}
+            </h3>
+        {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

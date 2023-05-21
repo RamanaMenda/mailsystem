@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Withdraw</title>
+</head>
+<body>
+<style>
+        .center{
+            margin: auto;
+            width: 60%;
+            border: 3px solid #737373;
+            background-color: rgb(40,150,210);
+            text-align: center;
+            padding: 10% 20% 15% 19%;
+            font-size:xx-large;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .center1{
+            text-align: center;
+            font-size: x-large;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+</style>
+    <div class="center">
+    <h1>Withdraw</h1>
+        <form action="withdraw" method="post" autocomplete="off">
+            {% csrf_token %}
+
+            Account Number: <input type = 'int' name = 'anumber' class="center1"><br>
+            Name: <input type = 'text' name = 'name' class="center1"><br>
+            Date: <input type="date" name="date" class="center1"><br>
+            Amount: <input type = 'int' name = 'amt' class="center1"><br>
+            <br><input type = 'submit' class="center1">
+        </form>
+        <div>
+        {% for message in messages %}
+            <h3>
+                {{message}}
+            </h3>
+        {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

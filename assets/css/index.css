@@ -1,0 +1,31 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.title{
+    background-color: purple;
+    color: white;
+    padding: 1%;
+    /* text-align: center; */
+}
+.title img{
+    float: left;
+    margin-top: -1%;
+    margin-right: 20px;
+}
+.title h1{
+    padding: 20px;
+}
+.text{
+    padding-top: 10%;
+}
+
+.btn{
+    float: right;
+    padding: 0.5%;
+    border-radius: 7%;
+    background-color: white;
+}
+.btn a{
+    text-decoration: none;
+}
